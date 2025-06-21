@@ -1,0 +1,29 @@
+# Training Parameters
+learning_rate: 0.0001
+batch_size: 16
+num_epochs: 200
+optimizer: 'AdamW'
+scheduler: 'CosineAnnealingLR'
+
+# Model Parameters
+num_points: 1024
+encoder_channels: [64, 128, 256]
+decoder_hidden_dim: 512
+num_joints: 17 # For COCO-Pose
+gat_layers: 3
+gat_heads: 4
+
+# Loss Weights
+lambda_geometry: 1.0  # For MPJPE / Chamfer
+lambda_spectral: 0.5
+lambda_domain: 0.1
+
+# Sinkhorn Algorithm
+sinkhorn_lambda: 10.0
+sinkhorn_iterations: 10
+
+# Dataset Paths
+coco_path: '/path/to/coco'
+pascal3d_path: '/path/to/pascal3d+'
+shapenet_path: '/path/to/shapenet'
+synthetic_data_path: '/path/to/synthetic_data'
